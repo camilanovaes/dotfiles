@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="Realtek_ALC3246-Internal_Mic" mtime="1533237230" type="bool" value="true"/>
+	<entry name="Realtek_ALC3246-Headset_Mic" mtime="1533237229" type="bool" value="true"/>
+	<entry name="Realtek_ALC3246-Auto-Mute_Mode" mtime="1533237229" type="bool" value="true"/>
+	<entry name="Realtek_ALC3246-IEC958" mtime="1533237229" type="bool" value="true"/>
+	<entry name="Realtek_ALC3246-Mic_Mute-LED_Mode" mtime="1533237229" type="bool" value="true"/>
+	<entry name="Realtek_ALC3246-Headphone_Mic" mtime="1533237229" type="bool" value="true"/>
+</gconf>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="Realtek_ALC3246-Internal_Mic_Boost" mtime="1533237229" type="string">
+		<stringvalue>Internal</stringvalue>
+	</entry>
+	<entry name="Realtek_ALC3246-Headset_Mic_Boost" mtime="1533237229" type="string">
+		<stringvalue>Headset </stringvalue>
+	</entry>
+	<entry name="Realtek_ALC3246-Capture" mtime="1533237229" type="string">
+		<stringvalue>Capture</stringvalue>
+	</entry>
+	<entry name="Realtek_ALC3246-PCM" mtime="1533237228" type="string">
+		<stringvalue>PCM</stringvalue>
+	</entry>
+	<entry name="Realtek_ALC3246-Speaker" mtime="1533237228" type="string">
+		<stringvalue>Speaker</stringvalue>
+	</entry>
+	<entry name="Realtek_ALC3246-Headphone_Mic_Boost" mtime="1533237228" type="string">
+		<stringvalue>Headphon</stringvalue>
+	</entry>
+	<entry name="Realtek_ALC3246-Headphone" mtime="1533237228" type="string">
+		<stringvalue>Headphon</stringvalue>
+	</entry>
+	<entry name="Realtek_ALC3246-Master" mtime="1533237228" type="string">
+		<stringvalue>Master</stringvalue>
+	</entry>
+</gconf>
