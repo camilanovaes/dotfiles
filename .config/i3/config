@@ -20,6 +20,10 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec terminator
 
+# Change keyboart layout 
+#bindsym $mod+n exec setxkbmap -layourt us
+#bindsym $mod+m exec setxkbmap -layourt br
+
 # firefox
 bindsym $mod+Shift+w exec firefox
 
