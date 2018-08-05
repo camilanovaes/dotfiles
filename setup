@@ -28,3 +28,9 @@
 
 # Screenshots 
 	- scrot
+
+# Lockscreen
+	- yaourt -S betterlockscreen-git
+
+# Power Manager
+	- pacman -Ss xfce4-power-manager
