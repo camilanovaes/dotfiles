@@ -24,8 +24,16 @@ Open vim and type:
 ```
 
 ## Ctags
+### Instalation
 Install Exuberant ctags
 
 ```bash 
 sudo apt install exuberant-ctags
+```
+
+### Usage
+Generate ctag file
+
+```bash 
+ctags -R project-folder
 ```
