@@ -23,6 +23,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'soramugi/auto-ctags.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'wincent/ferret'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -31,6 +32,7 @@ filetype plugin indent on    " required
 " General configuration
 set clipboard=unnamed 
 set laststatus=2
+set tabstop=4 
 
 " Commands map
 map <C-o> :NERDTreeToggle<CR>
