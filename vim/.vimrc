@@ -22,8 +22,8 @@ Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'soramugi/auto-ctags.vim'
 Plugin 'majutsushi/tagbar'
-Plugin 'davidhalter/jedi-vim'
 Plugin 'wincent/ferret'
+Plugin 'Valloric/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

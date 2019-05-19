@@ -37,3 +37,15 @@ Generate ctag file
 ```bash 
 ctags -R project-folder
 ```
+
+## YouCompleteMe
+Install dependencies:
+```bash
+sudo apt install build-essential cmake python4-dev
+``` 
+
+Install YCM
+```bash
+cd ~/.vim/bundle/YouCompleteMe
+python3 install.py --clangd-completer
+```
