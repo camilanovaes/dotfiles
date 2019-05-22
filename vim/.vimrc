@@ -52,6 +52,8 @@ au BufNewFile,BufRead *.py
     \ set expandtab |
     \ set autoindent |
     \ set fileformat=unix |
+    \ hi Bang ctermfg=red guifg=red |
+    \ match Bang /\%>79v.*\%<81v/ |
 
 let python_highlight_all=1
 syntax on
