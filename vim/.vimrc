@@ -20,19 +20,27 @@ Plugin 'jnurmine/Zenburn'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'soramugi/auto-ctags.vim'
-Plugin 'majutsushi/tagbar'
 Plugin 'wincent/ferret'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'ntpetars/vim-better-whitespace'
+Plugin 'junegunn/fzf.vim'
+Plugin 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+Plugin 'pangloss/vim-javascript'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'MaxMEllon/vim-jsx-pretty'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 " General configuration
-set clipboard=unnamed 
+set clipboard=unnamed
 set laststatus=2
-set tabstop=4 
+set tabstop=4
+set number
+set relativenumber
 
 " Commands map
 map <C-o> :NERDTreeToggle<CR>
@@ -52,8 +60,7 @@ au BufNewFile,BufRead *.py
     \ set expandtab |
     \ set autoindent |
     \ set fileformat=unix |
-    \ hi Bang ctermfg=red guifg=red |
-    \ match Bang /\%>79v.*\%<81v/ |
+	\ set colorcolumn=80
 
 let python_highlight_all=1
 syntax on
