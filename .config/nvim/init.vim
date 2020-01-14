@@ -38,6 +38,7 @@ Plug 'sheerun/vim-polyglot'								" Highlighting
 Plug 'tpope/vim-fugitive'                               " Git plugin
 Plug 'tpope/vim-surround'								" Surround for (, [
 Plug 'tpope/vim-commentary'								" Commentary
+Plug 'junegunn/gv.vim'									" Git browser
 
 call plug#end()
 
@@ -72,7 +73,7 @@ nmap <space>gm :Gcommit --amend<CR>
 nmap <space>gp :Gpush<CR>
 nmap <space>gd :Gdiff<CR>
 nmap <space>gw :Gwrite<CR>
-nmap <space>gl :Gllog<CR>
+nmap <space>gl :GV<CR>
 
 " Laguages configuration
 "" Python
