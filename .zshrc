@@ -1,12 +1,12 @@
 # ZSH CONFIG FILE
-#                       _ _            _       _   
-#    ___ __ _ _ __ ___ (_) | __ _   __| | ___ | |_ 
+#                       _ _            _       _
+#    ___ __ _ _ __ ___ (_) | __ _   __| | ___ | |
 #   / __/ _` | '_ ` _ \| | |/ _` | / _` |/ _ \| __|
-#  | (_| (_| | | | | | | | | (_| || (_| | (_) | |_ 
+#  | (_| (_| | | | | | | | | (_| || (_| | (_) | |_
 #   \___\__,_|_| |_| |_|_|_|\__,_(_)__,_|\___/ \__|
 #
-# Author: Camila Novaes <novaes.csw@gmail.com>			                                          #
-
+# Author: Camila Novaes <novaes.csw@gmail.com>
+#
 # Path to oh-my-zsh installation.
 export ZSH="/home/camila/.oh-my-zsh"
 
