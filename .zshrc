@@ -22,6 +22,7 @@ plugins=(git
 	 z)
 
 source $ZSH/oh-my-zsh.sh
+export LC_CTYPE=en_US.UTF-8
 
 # VirtualEnvWrapper configuration
 export WORKON_HOME=$HOME/.virtualenvs
