@@ -43,6 +43,9 @@ Plug 'junegunn/gv.vim'									" Git browser
 Plug 'ludovicchabant/vim-gutentags'						" Autogenerate Tags
 Plug 'majutsushi/tagbar'								" Tag bar
 Plug 'lervag/vimtex'									" Latex plugin
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'							" Markdown
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 
 call plug#end()
 
