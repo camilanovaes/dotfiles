@@ -19,7 +19,8 @@ set smartindent
 set smarttab
 set number
 set relativenumber
-set colorcolumn=80
+set textwidth=80
+set colorcolumn=+1
 set mouse=a
 set inccommand=nosplit
 
@@ -39,6 +40,8 @@ Plug 'tpope/vim-fugitive'                               " Git plugin
 Plug 'tpope/vim-surround'								" Surround for (, [
 Plug 'tpope/vim-commentary'								" Commentary
 Plug 'junegunn/gv.vim'									" Git browser
+Plug 'ludovicchabant/vim-gutentags'						" Autogenerate Tags
+Plug 'majutsushi/tagbar'								" Tag bar
 
 call plug#end()
 
@@ -48,6 +51,9 @@ colorscheme onedark
 
 " NERD Tree
 nmap <C-n> :NERDTreeToggle<CR>
+
+" Tag bar
+nmap <space>bl :TagbarToggle<CR>
 
 " Highlighting and stripping whitespace on save
 let g:better_whitespace_enabled = 1
@@ -81,11 +87,9 @@ au BufNewFile,BufRead *.py
     \ set tabstop=4 |
     \ set softtabstop=4 |
     \ set shiftwidth=4 |
-    \ set textwidth=79 |
     \ set expandtab |
     \ set autoindent |
     \ set fileformat=unix |
-	\ set colorcolumn=80
 
 let python_highlight_all=1
 syntax on

@@ -58,6 +58,13 @@ On ubuntu/debian run:
 sudo apt install neovim
 ```
 
+### Ctags
+To install ctags run:
+
+```bash
+sudo apt install ctags
+```
+
 ### Install plug
 Download `plug` into the `.local/share/nvim/site/autoload` directory:
 
