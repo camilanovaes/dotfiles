@@ -27,6 +27,7 @@ export LC_CTYPE=en_US.UTF-8
 # VirtualEnvWrapper configuration
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.6
 source ~/.local/bin/virtualenvwrapper.sh
 
 # FZF configuration
