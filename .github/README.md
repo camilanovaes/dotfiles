@@ -13,10 +13,25 @@ Use the following command to clone the repository:
 git clone --bare https://github.com/camilanovaes/my-dotfiles $HOME/.cfg
 ```
 
+Configure the alias:
+```bash
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+```
+
+Add the `.cfg` folder to `.gitignore`:
+```bash
+echo ".cfg" >> .gitignore
+```
+
 And set the `showUntrackedFiles` to `no` to hide files we are not explicity tracking yet.
 
 ```bash
 config config --local status.showUntrackedFiles no
+```
+
+Checkout the actual content from the bare repository to your `$HOME`:
+```bash
+config checkout
 ```
 
 Create a alias on `.zshrc` file, named `config`, so that we can use to interact with our configuration repository, instead of the regular `git` command.
@@ -25,7 +40,34 @@ Create a alias on `.zshrc` file, named `config`, so that we can use to interact 
 echo "alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'" >> $HOME/.zshrc
 ```
 
-# Some configs..
+# Configuration
+## Alacritty
+### Installation
+On ubuntu/debin run:
+
+```bash
+sudo add-apt-repository ppa:mmstick76/alacritty
+sudo apt update
+sudo apt install alacritty
+```
+## Neovim
+### Installation
+On ubuntu/debian run:
+
+```bash
+sudo apt install neovim
+```
+
+### Install plug
+Download `plug` into the `.local/share/nvim/site/autoload` directory:
+
+```bash
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
+After that, enter on nvim and run `:PluginInstall`.
+
 ## ZSH
 ZSH is one of the most feature-rich shells for Unix.
 
