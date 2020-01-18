@@ -42,6 +42,7 @@ Plug 'tpope/vim-commentary'								" Commentary
 Plug 'junegunn/gv.vim'									" Git browser
 Plug 'ludovicchabant/vim-gutentags'						" Autogenerate Tags
 Plug 'majutsushi/tagbar'								" Tag bar
+Plug 'lervag/vimtex'									" Latex plugin
 
 call plug#end()
 

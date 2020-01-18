@@ -58,6 +58,14 @@ On ubuntu/debian run:
 sudo apt install neovim
 ```
 
+### Latex
+Install latexmk and latex packages:
+
+```bash
+sudo apt install latexmk
+sudo apt install texlive-latex-base texlive-latex-extra texlive-latex-recommended
+```
+
 ### Ctags
 To install ctags run:
 
