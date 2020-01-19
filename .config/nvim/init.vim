@@ -23,6 +23,7 @@ set textwidth=80
 set colorcolumn=+1
 set mouse=a
 set inccommand=nosplit
+set foldmethod=expr
 
 " Plugin configuration
 call plug#begin('~/.local/share/nvim/plugged')
@@ -89,7 +90,11 @@ nmap <space>gl :GV<CR>
 " Vimwiki config to support markdown
 let g:vimwiki_list = [{ 'path': '~/Documents/notes/',
        \ 'syntax':'markdown', 'ext': '.md' }]
+let g:vimwiki_folding = 'expr'
 autocmd FileType vimwiki set ft=markdown
+
+" Disable folding with vim-markdown plugin
+let g:vim_markdown_folding_disabled = 1
 
 " Laguages configuration
 "" Python
@@ -109,3 +114,4 @@ syntax on
 "    \ set tabstop=2 |
 "    \ set softtabstop=2 |
 "    \ set shiftwidth=2 |
+
