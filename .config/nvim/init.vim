@@ -46,6 +46,7 @@ Plug 'lervag/vimtex'									" Latex plugin
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'							" Markdown
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+Plug 'vimwiki/vimwiki', { 'branch': 'dev' }				" Vimwiki
 
 call plug#end()
 
@@ -84,6 +85,11 @@ nmap <space>gp :Gpush<CR>
 nmap <space>gd :Gdiff<CR>
 nmap <space>gw :Gwrite<CR>
 nmap <space>gl :GV<CR>
+
+" Vimwiki config to support markdown
+let g:vimwiki_list = [{ 'path': '~/Documents/notes/',
+       \ 'syntax':'markdown', 'ext': '.md' }]
+autocmd FileType vimwiki set ft=markdown
 
 " Laguages configuration
 "" Python
