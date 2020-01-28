@@ -48,12 +48,16 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'							" Markdown
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }				" Vimwiki
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 call plug#end()
 
 " Neovim Theme
 syntax enable
 colorscheme onedark
+
+" Enable deoplete
+let g:deoplete#enable_at_startup = 1
 
 " NERD Tree
 nmap <C-n> :NERDTreeToggle<CR>
