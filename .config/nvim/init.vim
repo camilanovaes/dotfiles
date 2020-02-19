@@ -41,23 +41,23 @@ Plug 'tpope/vim-fugitive'                               " Git plugin
 Plug 'tpope/vim-surround'								" Surround for (, [
 Plug 'tpope/vim-commentary'								" Commentary
 Plug 'junegunn/gv.vim'									" Git browser
-Plug 'ludovicchabant/vim-gutentags'						" Autogenerate Tags
-Plug 'majutsushi/tagbar'								" Tag bar
+" Plug 'ludovicchabant/vim-gutentags'						" Autogenerate Tags
+" Plug 'majutsushi/tagbar'								" Tag bar
 Plug 'lervag/vimtex'									" Latex plugin
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'							" Markdown
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }				" Vimwiki
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'ycm-core/YouCompleteMe'
 
 call plug#end()
+
+" Disable window preview
+set completeopt-=preview
 
 " Neovim Theme
 syntax enable
 colorscheme onedark
-
-" Enable deoplete
-let g:deoplete#enable_at_startup = 1
 
 " NERD Tree
 nmap <C-n> :NERDTreeToggle<CR>
