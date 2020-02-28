@@ -38,6 +38,7 @@ Plug 'airblade/vim-gitgutter'							" Git plugin
 Plug 'ntpeters/vim-better-whitespace'					" Show whitespaces
 Plug 'sheerun/vim-polyglot'								" Highlighting
 Plug 'tpope/vim-fugitive'                               " Git plugin
+Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'								" Surround for (, [
 Plug 'tpope/vim-commentary'								" Commentary
 Plug 'junegunn/gv.vim'									" Git browser
@@ -49,25 +50,38 @@ Plug 'plasticboy/vim-markdown'							" Markdown
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }				" Vimwiki
 Plug 'ycm-core/YouCompleteMe'
+Plug 'neomake/neomake'									" Syntax check
+Plug 'machakann/vim-highlightedyank'					" Highlight yank
 
 call plug#end()
 
-" Disable window preview
-set completeopt-=preview
+" NOTE:
+" To install YouCompleteME, run:
+" python3 -m pip install neovim
+" python3 install.py --clang-completer
 
 " Neovim Theme
 syntax enable
 colorscheme onedark
 
+" Highlight yank configuration
+hi HighlightedyankRegion cterm=reverse gui=reverse
+
 " NERD Tree
 nmap <C-n> :NERDTreeToggle<CR>
 
 " Tag bar
-nmap <space>bl :TagbarToggle<CR>
+nmap <space>tb :TagbarToggle<CR>
+
+" Disable window preview
+set completeopt-=preview
 
 " Highlighting and stripping whitespace on save
 let g:better_whitespace_enabled = 1
 let g:strip_whitespace_on_save  = 1
+
+" Python syntax check
+let g:neomake_python_enabled_makers = ['pylint']
 
 " Split navigatiion
 nnoremap <C-k> <C-w>k
@@ -82,7 +96,7 @@ nnoremap <silent> <C-T> :Ag<CR>
 
 " Fugitive config
 nmap <space>gb :Gblame<CR>
-nmap <space>gs :Gstatus<CR>
+nmap <space>gs :vertical Gstatus<CR>
 nmap <space>gc :Gcommit -v<CR>
 nmap <space>ga :Git add -p<CR>
 nmap <space>gm :Gcommit --amend<CR>
@@ -90,6 +104,9 @@ nmap <space>gp :Gpush<CR>
 nmap <space>gd :Gdiff<CR>
 nmap <space>gw :Gwrite<CR>
 nmap <space>gl :GV<CR>
+
+" Gbrowser configuration
+let g:github_enterprise_urls = ['https://gitlab.lasse.ufpa.br']
 
 " Vimwiki config to support markdown
 let g:vimwiki_list = [{ 'path': '~/Documents/notes/',
