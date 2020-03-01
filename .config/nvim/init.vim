@@ -23,7 +23,7 @@ set textwidth=80
 set colorcolumn=+1
 set mouse=a
 set inccommand=nosplit
-set foldmethod=expr
+" set foldmethod=expr
 
 " Plugin configuration
 call plug#begin('~/.local/share/nvim/plugged')
@@ -52,6 +52,7 @@ Plug 'vimwiki/vimwiki', { 'branch': 'dev' }				" Vimwiki
 Plug 'ycm-core/YouCompleteMe'
 Plug 'neomake/neomake'									" Syntax check
 Plug 'machakann/vim-highlightedyank'					" Highlight yank
+Plug 'tmhedberg/SimpylFold'								" Fold
 
 call plug#end()
 
