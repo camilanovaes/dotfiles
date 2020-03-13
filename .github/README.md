@@ -147,3 +147,28 @@ After, you can run:
 ```
 watch --color git status
 ```
+
+## Tmux
+### Installation
+On ubuntu/debian run:
+
+```bash
+apt install tmux
+```
+
+### Tmux plugin manager (TPM)
+To install TPM, just pull the git repository:
+
+```bash
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+
+### Tmuxp
+With `tmuxp` is possible to create tmux reusable sessions.
+
+To install, just run:
+
+```bash
+pip3 install --user tmuxp
+```
+

@@ -24,6 +24,9 @@ plugins=(git
 source $ZSH/oh-my-zsh.sh
 export LC_CTYPE=en_US.UTF-8
 
+# TMUX
+export DISABLE_AUTO_TITLE='true'
+
 # VirtualEnvWrapper configuration
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
