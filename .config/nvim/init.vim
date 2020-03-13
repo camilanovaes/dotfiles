@@ -51,6 +51,7 @@ Plug 'ycm-core/YouCompleteMe'
 Plug 'neomake/neomake'									" Syntax check
 Plug 'machakann/vim-highlightedyank'					" Highlight yank
 Plug 'tmhedberg/SimpylFold'								" Fold
+Plug 'christoomey/vim-tmux-navigator'					" Tmux
 
 call plug#end()
 
