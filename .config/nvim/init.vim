@@ -42,8 +42,6 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'								" Surround for (, [
 Plug 'tpope/vim-commentary'								" Commentary
 Plug 'junegunn/gv.vim'									" Git browser
-" Plug 'ludovicchabant/vim-gutentags'						" Autogenerate Tags
-" Plug 'majutsushi/tagbar'								" Tag bar
 Plug 'lervag/vimtex'									" Latex plugin
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'							" Markdown
@@ -60,6 +58,8 @@ call plug#end()
 " To install YouCompleteME, run:
 " python3 -m pip install neovim
 " python3 install.py --clang-completer
+" To copy into the system clipboard on debian-systems, install:
+" apt install xclip
 
 " Neovim Theme
 syntax enable
@@ -68,11 +68,17 @@ colorscheme onedark
 " Highlight yank configuration
 hi HighlightedyankRegion cterm=reverse gui=reverse
 
+" General mapping
+nmap <space>h :wincmd h<CR>
+nmap <space>j :wincmd j<CR>
+nmap <space>k :wincmd k<CR>
+nmap <space>l :wincmd l<CR>
+nmap <space>y "+y
+nmap <space><space> V
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
 " NERD Tree
 nmap <C-n> :NERDTreeToggle<CR>
-
-" Tag bar
-nmap <space>tb :TagbarToggle<CR>
 
 " Disable window preview
 set completeopt-=preview
@@ -84,11 +90,9 @@ let g:strip_whitespace_on_save  = 1
 " Python syntax check
 let g:neomake_python_enabled_makers = ['pylint']
 
-" Split navigatiion
-nnoremap <C-k> <C-w>k
-nnoremap <C-j> <C-w>j
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
+" YouCompleteMe
+nnoremap <silent> <space>gd :YcmCompleter GoTo<CR>
+nnoremap <silent> <space>gf :YcmCompleter FixIt<CR>
 
 " Fuzzy search
 nnoremap <silent> <C-p> :Files<CR>
@@ -102,7 +106,7 @@ nmap <space>gc :Gcommit -v<CR>
 nmap <space>ga :Git add -p<CR>
 nmap <space>gm :Gcommit --amend<CR>
 nmap <space>gp :Gpush<CR>
-nmap <space>gd :Gdiff<CR>
+nmap <space>gi :Gdiff<CR>
 nmap <space>gw :Gwrite<CR>
 nmap <space>gl :GV<CR>
 
