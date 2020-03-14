@@ -53,3 +53,8 @@ alias ccc="xclip -sel clip"
 
 ## Dotfile repository
 alias config='/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME'
+
+## Tmux
+alias t="tmux"
+alias tls="tmux ls"
+alias ta="tmux attach"
