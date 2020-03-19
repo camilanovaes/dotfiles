@@ -1,5 +1,4 @@
 
-"    ___ __ _ _ __ ___ (_) | __ _   __| | ___ | |_
 "   / __/ _` | '_ ` _ \| | |/ _` | / _` |/ _ \| __|
 "  | (_| (_| | | | | | | | | (_| || (_| | (_) | |_
 "   \___\__,_|_| |_| |_|_|_|\__,_(_)__,_|\___/ \__|
@@ -34,6 +33,8 @@ Plug 'mattn/emmet-vim'									" Emmet
 Plug 'junegunn/fzf'										" Fuzzy search
 Plug 'junegunn/fzf.vim'									" Fuzzy search
 Plug 'joshdick/onedark.vim'								" One dark theme
+Plug 'drewtempelmeyer/palenight.vim'					" Palenight theme
+Plug 'ayu-theme/ayu-vim'								" Ayu theme
 Plug 'airblade/vim-gitgutter'							" Git plugin
 Plug 'ntpeters/vim-better-whitespace'					" Show whitespaces
 Plug 'sheerun/vim-polyglot'								" Highlighting
@@ -64,7 +65,19 @@ call plug#end()
 
 " Neovim Theme
 syntax enable
-colorscheme onedark
+set termguicolors
+
+" Palenight
+set background=dark
+colorscheme palenight
+
+" Ayu
+" let ayucolor="mirage"
+" let ayucolor="dark"
+" colorscheme ayu
+
+" Configure airline color
+let g:airline_theme = "palenight"
 
 " Highlight yank configuration
 hi HighlightedyankRegion cterm=reverse gui=reverse
