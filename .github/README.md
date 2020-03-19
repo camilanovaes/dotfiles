@@ -66,13 +66,6 @@ sudo apt install latexmk
 sudo apt install texlive-latex-base texlive-latex-extra texlive-latex-recommended
 ```
 
-### Ctags
-To install ctags run:
-
-```bash
-sudo apt install ctags
-```
-
 ### Install plug
 Download `plug` into the `.local/share/nvim/site/autoload` directory:
 
