@@ -1,7 +1,16 @@
 # Dotfiles
-- **OS**:
+
+<div align="center">
+
+![Terminal](terminal.png)
+
+![forthebadge](https://forthebadge.com/images/badges/built-by-hipsters.svg)
+![forthebadge](https://forthebadge.com/images/badges/winter-is-coming.svg)
+</div>
+
 - **Terminal**: [Alacritty](https://github.com/jwilm/alacritty)
-- **Editor**: [neovim](https://github.com/neovim/neovim)
+- **Terminal multiplexer**: [Tmux](https://github.com/tmux/tmux)
+- **Editor**: [Neovim](https://github.com/neovim/neovim)
 
 # Installation
 ## How to clone and config this repository
@@ -56,14 +65,6 @@ On ubuntu/debian run:
 
 ```bash
 sudo apt install neovim
-```
-
-### Latex
-Install latexmk and latex packages:
-
-```bash
-sudo apt install latexmk
-sudo apt install texlive-latex-base texlive-latex-extra texlive-latex-recommended
 ```
 
 ### Install plug
