@@ -43,11 +43,7 @@ Checkout the actual content from the bare repository to your `$HOME`:
 config checkout
 ```
 
-Create a alias on `.zshrc` file, named `config`, so that we can use to interact with our configuration repository, instead of the regular `git` command.
-
-```bash
-echo "alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'" >> $HOME/.zshrc
-```
+That's it! :)
 
 # Configuration
 ## Alacritty
