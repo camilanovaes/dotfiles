@@ -55,13 +55,12 @@ sudo add-apt-repository ppa:mmstick76/alacritty
 sudo apt update
 sudo apt install alacritty
 ```
-## Neovim
+## Neovim (> v0.3)
 ### Installation
-On ubuntu/debian run:
 
-```bash
-sudo apt install neovim
-```
+Check out the neovim installation
+[page](https://github.com/neovim/neovim/wiki/Installing-Neovim) to install the
+latest version.
 
 ### Install plug
 Download `plug` into the `.local/share/nvim/site/autoload` directory:
