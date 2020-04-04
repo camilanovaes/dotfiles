@@ -35,7 +35,7 @@ Plug 'junegunn/fzf.vim'									" Fuzzy search
 Plug 'drewtempelmeyer/palenight.vim'					" Palenight theme
 Plug 'airblade/vim-gitgutter'							" Git plugin
 Plug 'ntpeters/vim-better-whitespace'					" Show whitespaces
-Plug 'sheerun/vim-polyglot'								" Highlighting
+Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}  " Highlighting
 Plug 'tpope/vim-fugitive'                               " Git plugin
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'								" Surround for (, [
