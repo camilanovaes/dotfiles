@@ -1,12 +1,11 @@
-
-"   / __/ _` | '_ ` _ \| | |/ _` | / _` |/ _ \| __|
-"  | (_| (_| | | | | | | | | (_| || (_| | (_) | |_
-"   \___\__,_|_| |_| |_|_|_|\__,_(_)__,_|\___/ \__|
+" NEOVIM CONFIGURATION
 "
 " Author: Camila Novaes <novaes.csw@gmail.com>
 "
 
-" General configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" GENERAL
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set cursorline
 set clipboard=unnamed
 set laststatus=2
@@ -22,9 +21,10 @@ set textwidth=80
 set colorcolumn=+1
 set mouse=a
 set inccommand=nosplit
-" set foldmethod=expr
 
-" Plugin configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" PLUGINS
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'vim-airline/vim-airline'						   	" Powerline bar
@@ -32,9 +32,7 @@ Plug 'scrooloose/nerdtree'								" Nerdtree
 Plug 'mattn/emmet-vim'									" Emmet
 Plug 'junegunn/fzf'										" Fuzzy search
 Plug 'junegunn/fzf.vim'									" Fuzzy search
-Plug 'joshdick/onedark.vim'								" One dark theme
 Plug 'drewtempelmeyer/palenight.vim'					" Palenight theme
-Plug 'ayu-theme/ayu-vim'								" Ayu theme
 Plug 'airblade/vim-gitgutter'							" Git plugin
 Plug 'ntpeters/vim-better-whitespace'					" Show whitespaces
 Plug 'sheerun/vim-polyglot'								" Highlighting
@@ -42,27 +40,29 @@ Plug 'tpope/vim-fugitive'                               " Git plugin
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'								" Surround for (, [
 Plug 'tpope/vim-commentary'								" Commentary
-Plug 'junegunn/gv.vim'									" Git browser
 Plug 'lervag/vimtex'									" Latex plugin
-Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'							" Markdown
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
-Plug 'vimwiki/vimwiki', { 'branch': 'dev' }				" Vimwiki
 Plug 'ycm-core/YouCompleteMe'
-Plug 'neomake/neomake'									" Syntax check
 Plug 'machakann/vim-highlightedyank'					" Highlight yank
 Plug 'tmhedberg/SimpylFold'								" Fold
 Plug 'christoomey/vim-tmux-navigator'					" Tmux
 
 call plug#end()
 
-" NOTE:
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" NOTES
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " To install YouCompleteME, run:
 " python3 -m pip install neovim
 " python3 install.py --clang-completer
 " To copy into the system clipboard on debian-systems, install:
 " apt install xclip
+"
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" THEME
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Neovim Theme
 syntax enable
 set termguicolors
@@ -71,17 +71,13 @@ set termguicolors
 set background=dark
 colorscheme palenight
 
-" Ayu
-" let ayucolor="mirage"
-" let ayucolor="dark"
-" colorscheme ayu
-
 " Configure airline color
 let g:airline_theme = "palenight"
 
-" Highlight yank configuration
-hi HighlightedyankRegion cterm=reverse gui=reverse
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" GENERAL MAPPING
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General mapping
 nmap <space>h :wincmd h<CR>
 nmap <space>j :wincmd j<CR>
@@ -93,16 +89,6 @@ nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " NERD Tree
 nmap <C-n> :NERDTreeToggle<CR>
-
-" Disable window preview
-set completeopt-=preview
-
-" Highlighting and stripping whitespace on save
-let g:better_whitespace_enabled = 1
-let g:strip_whitespace_on_save  = 1
-
-" Python syntax check
-let g:neomake_python_enabled_makers = ['pylint']
 
 " YouCompleteMe
 nnoremap <silent> <space>gd :YcmCompleter GoTo<CR>
@@ -124,17 +110,19 @@ nmap <space>gi :Gdiff<CR>
 nmap <space>gw :Gwrite<CR>
 nmap <space>gl :GV<CR>
 
-" Gbrowser configuration
-let g:github_enterprise_urls = ['https://gitlab.lasse.ufpa.br']
 
-" Vimwiki config to support markdown
-let g:vimwiki_list = [{ 'path': '~/Documents/notes/',
-       \ 'syntax':'markdown', 'ext': '.md' }]
-let g:vimwiki_folding = 'expr'
-autocmd FileType vimwiki set ft=markdown
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" PLUGIN CONFIG
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Highlight yank configuration
+hi HighlightedyankRegion cterm=reverse gui=reverse
 
-" Disable folding with vim-markdown plugin
-let g:vim_markdown_folding_disabled = 1
+" Disable window preview
+set completeopt-=preview
+
+" Highlighting and stripping whitespace on save
+let g:better_whitespace_enabled = 1
+let g:strip_whitespace_on_save  = 1
 
 " Laguages configuration
 "" Python
@@ -147,11 +135,4 @@ au BufNewFile,BufRead *.py
     \ set fileformat=unix |
 
 let python_highlight_all=1
-syntax on
-
-" Js, HTML and CSS configs
-"au BufNewFile,BufRead *.js, *.html, *.css
-"    \ set tabstop=2 |
-"    \ set softtabstop=2 |
-"    \ set shiftwidth=2 |
 
