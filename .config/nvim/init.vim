@@ -51,6 +51,7 @@ Plug 'junegunn/fzf.vim'									" Fuzzy search
 
 " Productivity
 Plug 'christoomey/vim-tmux-navigator'					" Tmux
+Plug 'christoomey/vim-tmux-runner'						" Send commands to Tmux
 Plug 'tmhedberg/SimpylFold'								" Fold
 Plug 'airblade/vim-gitgutter'							" Git plugin
 Plug 'neoclide/coc.nvim', {'branch': 'release'}			" Autocomplete
@@ -162,6 +163,18 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" TMUX
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+noremap <Leader>ta :VtrAttachToPane<CR>
+noremap <Leader><Enter> :VtrSendLinesToRunner<CR>
+noremap <Leader>dd :VtrSendCommandToRunner python -m unittest discover<CR>
+
+" Better support to whitespaces for python
+let g:VtrStripLeadingWhitespace = 0
+let g:VtrClearEmptyLines = 0
+let g:VtrAppendNewline = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " OTHERS
