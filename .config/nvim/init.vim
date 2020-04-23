@@ -56,12 +56,13 @@ Plug 'tmhedberg/SimpylFold'								" Fold
 Plug 'airblade/vim-gitgutter'							" Git plugin
 Plug 'neoclide/coc.nvim', {'branch': 'release'}			" Autocomplete
 
-" Colors and themes
+" Visual
 Plug 'machakann/vim-highlightedyank'					" Highlight yank
 Plug 'vim-airline/vim-airline'						   	" Powerline bar
 Plug 'drewtempelmeyer/palenight.vim'					" Palenight theme
 Plug 'ntpeters/vim-better-whitespace'					" Show whitespaces
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}  " Python Highlighting
+Plug 'thaerkh/vim-indentguides'							" Indent lines
 
 call plug#end()
 
