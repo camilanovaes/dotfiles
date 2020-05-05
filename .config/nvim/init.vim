@@ -41,8 +41,9 @@ Plug 'mbbill/undotree'									" Undo history
 Plug 'sheerun/vim-polyglot'								" Language pack
 
 " Git
-Plug 'junegunn/gv.vim'									" Git plugin
-Plug 'tpope/vim-fugitive'                               " Git plugin
+Plug 'junegunn/gv.vim'									" Commits view
+Plug 'tpope/vim-fugitive'								" Core plugin
+Plug 'christoomey/vim-conflicted'						" Merge/Rebase conflict
 
 " File management
 Plug 'scrooloose/nerdtree'								" Nerdtree
@@ -132,6 +133,12 @@ nmap <Leader>gw :Gwrite<CR>
 " GV - Git commit browser
 nmap <Leader>gl :GV<CR>
 
+" Conflicted
+" let g:diffget_local_map = 'gl'
+" let g:diffget_upstream_map = 'gu'
+" Add version name on statusbar
+set stl+=%{ConflictedVersion()}
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " UNDO HISTORY
@@ -163,7 +170,6 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " TMUX
@@ -204,6 +210,12 @@ au BufNewFile,BufRead *.py
 
 " Highlighting
 let python_highlight_all=1
+
+" Diff colorscheme
+highlight DiffAdd    gui=bold guifg=#87d700 guibg=#6c6c6c
+highlight DiffDelete gui=none guibg=#4e4e4e
+highlight DiffChange gui=bold guibg=#6c6c6c
+highlight DiffText   gui=bold guifg=Black guibg=#ff0000
 
 " Figure out the system Python for Neovim.
 if exists("$VIRTUAL_ENV")
