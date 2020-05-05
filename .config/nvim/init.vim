@@ -57,6 +57,7 @@ Plug 'christoomey/vim-tmux-runner'						" Send commands to Tmux
 Plug 'tmhedberg/SimpylFold'								" Fold
 Plug 'airblade/vim-gitgutter'							" Git plugin
 Plug 'neoclide/coc.nvim', {'branch': 'release'}			" Autocomplete
+Plug 'mhinz/vim-startify'								" Home page
 
 " Visual
 Plug 'machakann/vim-highlightedyank'					" Highlight yank
