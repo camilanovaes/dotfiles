@@ -39,6 +39,7 @@ Plug 'plasticboy/vim-markdown'							" Markdown
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'mbbill/undotree'									" Undo history
 Plug 'sheerun/vim-polyglot'								" Language pack
+Plug 'junegunn/vim-easy-align'							" Alignment tool
 
 " Git
 Plug 'junegunn/gv.vim'									" Commits view
@@ -196,6 +197,9 @@ let g:strip_whitespace_on_save  = 1
 " Open terminal inside vim
 map <Leader>tt :bel 10 split term://zsh<CR>
 
+" Aligment
+" Ex. gaip=
+nmap ga <Plug>(EasyAlign)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PYTHON
