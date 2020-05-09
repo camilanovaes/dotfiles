@@ -34,12 +34,16 @@ call plug#begin('~/.local/share/nvim/plugged')
 " Basics
 Plug 'tpope/vim-surround'								" Surround for (, [
 Plug 'tpope/vim-commentary'								" Commentary
-Plug 'lervag/vimtex'									" Latex plugin
 Plug 'plasticboy/vim-markdown'							" Markdown
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'mbbill/undotree'									" Undo history
 Plug 'sheerun/vim-polyglot'								" Language pack
 Plug 'junegunn/vim-easy-align'							" Alignment tool
+Plug 'sirver/ultisnips'									" Snippets
+Plug 'honza/vim-snippets'
+
+" Latex
+Plug 'lervag/vimtex'									" Latex
 
 " Git
 Plug 'junegunn/gv.vim'									" Commits view
@@ -69,7 +73,6 @@ Plug 'thaerkh/vim-indentguides'							" Indent lines
 
 call plug#end()
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " THEME
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -83,7 +86,6 @@ colorscheme palenight
 
 " Configure airline color
 let g:airline_theme = "palenight"
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NAVIGATION
@@ -104,12 +106,10 @@ noremap <silent> <C-Down> :resize -3<CR>
 map <Leader>th <C-w>t<C-w>H
 map <Leader>tk <C-w>t<C-w>K
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTREE
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nmap <C-n> :NERDTreeToggle<CR>
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " FUZZYSEARCH
@@ -117,7 +117,6 @@ nmap <C-n> :NERDTreeToggle<CR>
 nnoremap <silent> <C-p> :Files<CR>
 nnoremap <silent> <C-space> :GFiles<CR>
 nnoremap <silent> <C-T> :Ag<CR>
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " GIT
@@ -141,12 +140,26 @@ nmap <Leader>gl :GV<CR>
 " Add version name on statusbar
 set stl+=%{ConflictedVersion()}
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" LATEX
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=2
+let g:tex_conceal=''
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" SNIPPETS
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:UltiSnipsExpandTrigger = '<c-j>'
+let g:UltiSnipsJumpForwardTrigger = '<c-n>'
+let g:UltiSnipsJumpBackwardTrigger = '<c-p>'
+let g:UltiSnipsSnippetDirectories=["UltiSnips", $HOME.'/.mysnippets']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " UNDO HISTORY
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <Leader>u :UndotreeShow<CR>
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " COC
@@ -203,6 +216,16 @@ map <Leader>tt :bel 10 split term://zsh<CR>
 nmap ga <Plug>(EasyAlign)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" FUNCTIONS
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+func GoYCM()
+	:CocDisable
+	nnoremap <buffer> <silent> <leader>gd :YcmCompleter GoTo<CR>
+    nnoremap <buffer> <silent> <leader>gr :YcmCompleter GoToReferences<CR>
+    nnoremap <buffer> <silent> <leader>rr :YcmCompleter RefactorRename<space>
+endfun
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PYTHON
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 au BufNewFile,BufRead *.py
@@ -228,5 +251,3 @@ if exists("$VIRTUAL_ENV")
 else
     let g:python3_host_prog=substitute(system("which python3"), "\n", '', 'g')
 endif
-
-
