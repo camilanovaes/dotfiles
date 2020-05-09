@@ -45,7 +45,7 @@ alias gs="git status"
 alias ga="git add"
 alias gc="git commit -v"
 alias gl="git l"
-alias gp="git push"
+alias gp="git pull"
 alias gf="git fetch"
 
 ## Clip
@@ -58,3 +58,6 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME'
 alias t="tmux"
 alias tls="tmux ls"
 alias ta="tmux attach"
+
+## Folders
+alias w="cd ~/Development/ufa23/ptp_analyzer"
