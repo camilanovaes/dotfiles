@@ -35,18 +35,18 @@ tabspaces: 8
 # Font configuration
 font:
   normal:
-    family: Monospace
+    family: firacode
     style: Regular
 
   bold:
-    family: Monospace
+    family: firacode
     style: Bold
 
   italic:
-    family: Monospace
+    family: firacode
     style: Italic
 
-  size: 13
+  size: 14
 
   offset:
     x: 0
