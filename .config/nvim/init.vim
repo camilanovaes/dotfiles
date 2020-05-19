@@ -131,6 +131,8 @@ noremap <silent> <C-Down> :resize -3<CR>
 map <Leader>th <C-w>t<C-w>H
 map <Leader>tk <C-w>t<C-w>K
 
+inoremap <C-c> <ESC>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTREE
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -149,12 +151,10 @@ nnoremap <silent> <C-T> :Ag<CR>
 " Fugitive
 nmap <Leader>gb :Gblame<CR>
 nmap <Leader>gs :vertical Gstatus<CR>
-nmap <Leader>gc :Gcommit -v<CR>
-nmap <Leader>ga :Git add -p<CR>
-nmap <Leader>gm :Gcommit --amend<CR>
-nmap <Leader>gp :Gpush<CR>
+nmap <Leader>gp :Gpush<Space>
 nmap <Leader>gi :Gdiff<CR>
 nmap <Leader>gw :Gwrite<CR>
+nmap <Leader>gk :Glog<CR>
 
 " GV - Git commit browser
 nmap <Leader>gl :GV<CR>
