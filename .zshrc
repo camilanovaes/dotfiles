@@ -30,7 +30,7 @@ export DISABLE_AUTO_TITLE='true'
 # VirtualEnvWrapper configuration
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.6
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.8
 source ~/.local/bin/virtualenvwrapper.sh
 
 # FZF configuration
