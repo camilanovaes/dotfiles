@@ -60,4 +60,4 @@ alias tls="tmux ls"
 alias ta="tmux attach"
 
 ## Folders
-alias w="cd ~/Development/ufa23/ptp_analyzer"
+alias w="cd ~/Development/sync/ptp_analyzer"
