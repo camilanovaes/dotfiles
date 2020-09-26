@@ -6,9 +6,10 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " GENERAL
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+syntax on
 set cursorline						" Highlight current line
-set clipboard=unnamedplus			" Copy to system clipboard by default
-set laststatus=2					" Always show statusline
+set nohlsearch						" Stop highlight search
+set noerrorbells					" Disable ring the bell for error messages
 set tabstop=4 softtabstop=4			" One tab == four spaces
 set shiftwidth=4					" One tab == four spaces
 set noexpandtab
@@ -16,13 +17,19 @@ set smartindent						" Be smart when indenting :P
 set smarttab						" Be smart using tabs :B
 set number relativenumber			" Set relative line numbers
 set textwidth=80					" Define text width
-set colorcolumn=+1
+set colorcolumn=80
 set mouse=a							" Enable mouse support in all vim modes
 set inccommand=nosplit
 set nobackup						" No auto backups
 set noswapfile						" No swap file
 set incsearch						" Incremental search
 set splitbelow splitright			" Set new split below/right
+set noshowmode
+set termguicolors					" Enables 24-bit color in the TUI
+set undodir=~/.vim/undodir
+set undofile
+set scrolloff=8						" Minimal number of lines do keep above the
+									" cursor.
 
 let mapleader = " "					" Set space bar as leader key
 
@@ -41,6 +48,7 @@ Plug 'sheerun/vim-polyglot'								" Language pack
 Plug 'junegunn/vim-easy-align'							" Alignment tool
 Plug 'sirver/ultisnips'									" Snippets
 Plug 'honza/vim-snippets'
+Plug 'vim-test/vim-test'
 
 " Latex
 Plug 'lervag/vimtex'									" Latex
@@ -48,7 +56,7 @@ Plug 'lervag/vimtex'									" Latex
 " Git
 Plug 'junegunn/gv.vim'									" Commits view
 Plug 'tpope/vim-fugitive'								" Core plugin
-Plug 'christoomey/vim-conflicted'						" Merge/Rebase conflict
+Plug 'stsewd/fzf-checkout.vim'
 
 " File management
 Plug 'scrooloose/nerdtree'								" Nerdtree
@@ -56,36 +64,28 @@ Plug 'junegunn/fzf'										" Fuzzy search
 Plug 'junegunn/fzf.vim'									" Fuzzy search
 
 " Productivity
-Plug 'christoomey/vim-tmux-navigator'					" Tmux
-Plug 'christoomey/vim-tmux-runner'						" Send commands to Tmux
-Plug 'tmhedberg/SimpylFold'								" Fold
 Plug 'airblade/vim-gitgutter'							" Git plugin
 Plug 'neoclide/coc.nvim', {'branch': 'release'}			" Autocomplete
 Plug 'mhinz/vim-startify'								" Home page
+Plug 'majutsushi/tagbar'								" Tag bar
 
 " Visual
 Plug 'machakann/vim-highlightedyank'					" Highlight yank
 Plug 'vim-airline/vim-airline'						   	" Powerline bar
-Plug 'drewtempelmeyer/palenight.vim'					" Palenight theme
 Plug 'ntpeters/vim-better-whitespace'					" Show whitespaces
-Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}  " Python Highlighting
 Plug 'thaerkh/vim-indentguides'							" Indent lines
+Plug 'gruvbox-community/gruvbox'
 
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " THEME
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Neovim Theme
-syntax enable
-set termguicolors
-
-" Palenight
+" Gruvbox
+colorscheme gruvbox
 set background=dark
-colorscheme palenight
 
-" Configure airline color
-let g:airline_theme = "palenight"
+let g:airline_theme = 'gruvbox'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STARTIFY
@@ -134,9 +134,10 @@ map <Leader>tk <C-w>t<C-w>K
 inoremap <C-c> <ESC>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" NERDTREE
+" NERDTREE and TAGBAR
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nmap <C-n> :NERDTreeToggle<CR>
+nmap <C-m> :TagbarToggle<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " FUZZYSEARCH
@@ -155,15 +156,19 @@ nmap <Leader>gp :Gpush<Space>
 nmap <Leader>gi :Gdiff<CR>
 nmap <Leader>gw :Gwrite<CR>
 nmap <Leader>gk :Glog<CR>
+nnoremap <leader>gc :GCheckout<CR>
 
 " GV - Git commit browser
 nmap <Leader>gl :GV<CR>
 
-" Conflicted
-" let g:diffget_local_map = 'gl'
-" let g:diffget_upstream_map = 'gu'
-" Add version name on statusbar
-set stl+=%{ConflictedVersion()}
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" VIM TEST
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <silent> t<C-n> :TestNearest<CR>
+nmap <silent> t<C-f> :TestFile<CR>
+nmap <silent> t<C-s> :TestSuite<CR>
+nmap <silent> t<C-l> :TestLast<CR>
+nmap <silent> t<C-g> :TestVisit<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " LATEX
@@ -210,18 +215,44 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+nmap <leader>rr <Plug>(coc-rename)
+nmap <leader>co <Plug>(coc-diagnostic-prev)
+nmap <leader>cn <Plug>(coc-diagnostic-next)
+nmap <leader>t <Plug>(coc-terminal-toggle)
+
+nnoremap <leader>prw :CocSearch <C-R>=expand("<cword")<CR><CR>
+
+" COC extensions
+let g:coc_global_extensions = [
+	\ 'coc-python',
+	\ 'coc-terminal',
+	\ ]
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" TMUX
+" FZF
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-noremap <Leader>ta :VtrAttachToPane<CR>
-noremap <Leader><Enter> :VtrSendLinesToRunner<CR>
-noremap <Leader>dd :VtrSendCommandToRunner python -m unittest discover<CR>
+" Display fzf window settings
+let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
+let $FZF_DEFAULT_OPTS = '--reverse'
+let g:fzf_checkout_track_key = 'ctrl-t'
 
-" Better support to whitespaces for python
-let g:VtrStripLeadingWhitespace = 0
-let g:VtrClearEmptyLines = 0
-let g:VtrAppendNewline = 1
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" POLYGLOT
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_types = 1
+let g:go_highlight_function_parameters = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_generate_tags = 1
+let g:go_highlight_format_strings = 1
+let g:go_highlight_variable_declarations = 1
+let g:go_auto_sameids = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " OTHERS
@@ -234,7 +265,7 @@ let g:better_whitespace_enabled = 1
 let g:strip_whitespace_on_save  = 1
 
 " Open terminal inside vim
-map <Leader>tt :bel 10 split term://zsh<CR>
+" map <Leader>tt :bel 10 split term://zsh<CR>
 
 " Aligment
 " Ex. gaip=
