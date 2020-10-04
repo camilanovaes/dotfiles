@@ -75,6 +75,7 @@ Plug 'vim-airline/vim-airline'						   	" Powerline bar
 Plug 'ntpeters/vim-better-whitespace'					" Show whitespaces
 Plug 'thaerkh/vim-indentguides'							" Indent lines
 Plug 'gruvbox-community/gruvbox'
+Plug 'drewtempelmeyer/palenight.vim'
 
 call plug#end()
 
@@ -82,10 +83,10 @@ call plug#end()
 " THEME
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Gruvbox
-colorscheme gruvbox
 set background=dark
+colorscheme palenight
 
-let g:airline_theme = 'gruvbox'
+let g:airline_theme = 'palenight'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STARTIFY
