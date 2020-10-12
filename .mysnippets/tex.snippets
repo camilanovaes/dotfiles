@@ -140,6 +140,16 @@ snippet ali "Align" bA
 \end{align}
 endsnippet
 
+snippet incfig "Figure" bA
+\begin{figure}[ht]
+	\centering
+	\incfig{${1:${VISUAL}}}
+	\caption{${2:${VISUAL}}}%
+	\label{fig:${2:${VISUAL}}}
+	\legend{Source: Author.}
+\end{figure}
+endsnippet
+
 
 context "math()"
 snippet // "Fraction" iA
