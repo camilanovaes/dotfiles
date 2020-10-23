@@ -114,6 +114,10 @@ live_config_reload: true
 
 shell:
   program: /bin/zsh
+  args:
+    - -l
+    - -c
+    - "tmux"
 
 key_bindings:
   - { key: V,         mods: Alt,        action: Paste                        }
