@@ -32,18 +32,18 @@ scrolling:
 # Font configuration
 font:
   normal:
-    family: SauceCodePro Nerd Font
+    family: FiraCode
     style: Regular
 
   bold:
-    family: SauceCodePro Nerd Font
+    family: FiraCode
     style: Bold
 
   italic:
-    family: SauceCodePro Nerd Font
+    family: FiraCode
     style: Italic
 
-  size: 13
+  size: 12
 
   offset:
     x: 0
