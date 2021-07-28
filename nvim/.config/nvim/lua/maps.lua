@@ -42,3 +42,13 @@ remap('i', '<expr> <C-',  "compe#close('<C-e>')", opts)
 remap('i', '<expr> <C-',  "compe#scroll({ 'delta': +4 })", opts)
 remap('i', '<expr> <C-',  "compe#scroll({ 'delta': -4 })", opts)
 
+-- git
+remap('n', '<leader>gb', ':Gblame<CR>', opts)
+remap('n', '<leader>gs', ':vertical Git<CR>', opts)
+remap('n', '<leader>gp', ':Gpush<Space>', opts)
+remap('n', '<leader>gi', ':Gdiff<CR>', opts)
+remap('n', '<leader>gw', ':Gwrite<CR>', opts)
+remap('n', '<leader>gk', ':Glog<CR>', opts)
+remap('n', '<leader>gc', ':GCheckout<CR>', opts)
+remap('n', '<leader>gl', ':GV<CR>', opts)
+
