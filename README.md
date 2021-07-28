@@ -14,33 +14,26 @@
 
 # Installation
 ## How to clone and config this repository
-> Ref: https://www.atlassian.com/git/tutorials/dotfiles
 
-Use the following command to clone the repository:
+I use GNU stow to manage my dotfiles. 
+
+Install stow:
 
 ```bash
-git clone --bare https://github.com/camilanovaes/my-dotfiles $HOME/.cfg
+sudo apt install stow
 ```
 
-Configure the alias:
+Clone this repository directly in your home folder, e.g., `~/dotfiles`.
+
 ```bash
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+git clone https://github.com/camilanovaes/my-dotfiles.git ~/dotfiles
 ```
 
-Add the `.cfg` folder to `.gitignore`:
-```bash
-echo ".cfg" >> .gitignore
-```
-
-And set the `showUntrackedFiles` to `no` to hide files we are not explicity tracking yet.
+After that just run stow to create the symbol links as follows:
 
 ```bash
-config config --local status.showUntrackedFiles no
-```
-
-Checkout the actual content from the bare repository to your `$HOME`:
-```bash
-config checkout
+cd ~/dotfiles
+stow */
 ```
 
 That's it! :)
