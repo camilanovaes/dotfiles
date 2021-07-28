@@ -4,8 +4,9 @@ return require('packer').startup(function()
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
-  -- LSP
+  -- LSP + Autocomplete
   use 'neovim/nvim-lspconfig'
+  use 'hrsh7th/nvim-compe'
 
   -- Nerdtree in lua
   use 'kyazdani42/nvim-web-devicons'

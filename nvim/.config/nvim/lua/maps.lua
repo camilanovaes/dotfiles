@@ -29,8 +29,16 @@ remap('n', '<C-Down>', ':resize -3<CR>', opts)
 remap('n', '<leader><esc>', ':nohlsearch<cr>', opts)
 
 -- navigation between buffers 
-remap('n', '<leader>n', ':bnext<cr>', opts)
-remap('n', '<leader>p', ':bprev<cr>', opts)
+remap('n', '<leader>p', ':bnext<cr>', opts)
+remap('n', '<leader>o', ':bprev<cr>', opts)
 
 -- nerdtree
 remap('n', '<C-n>', ':NvimTreeToggle<CR>', opts)
+
+-- compe
+remap('i', '<expr> <C-Space>', 'compe#complete()', opts)
+remap('i', '<expr> <CR>', "compe#confirm('<CR>')", opts)
+remap('i', '<expr> <C-',  "compe#close('<C-e>')", opts)
+remap('i', '<expr> <C-',  "compe#scroll({ 'delta': +4 })", opts)
+remap('i', '<expr> <C-',  "compe#scroll({ 'delta': -4 })", opts)
+
