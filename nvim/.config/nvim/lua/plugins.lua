@@ -4,6 +4,9 @@ return require('packer').startup(function()
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+  -- Basics
+  use 'tpope/vim-commentary'
+
   -- LSP + Autocomplete
   use 'neovim/nvim-lspconfig'
   use 'hrsh7th/nvim-compe'
