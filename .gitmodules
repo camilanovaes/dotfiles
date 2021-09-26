@@ -1,0 +1,3 @@
+[submodule "inkscape/.config/inkscape-shortcut-manager"]
+	path = inkscape/.config/inkscape-shortcut-manager
+	url = git@github.com:camilanovaes/inkscape-shortcut-manager.git 
