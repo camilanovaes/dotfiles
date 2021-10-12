@@ -33,6 +33,10 @@ export PROJECT_HOME=$HOME/Devel
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.8
 source /home/camila/.local/bin/virtualenvwrapper.sh
 
+# Path
+path+=('/home/camila/.local/bin')
+export PATH
+
 # FZF configuration
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
