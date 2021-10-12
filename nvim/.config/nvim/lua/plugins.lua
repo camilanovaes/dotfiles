@@ -7,9 +7,13 @@ return require('packer').startup(function()
   -- Basics
   use 'tpope/vim-commentary'
 
-  -- LSP + Autocomplete
+  -- LSP + Autocomplete + Syntax
   use 'neovim/nvim-lspconfig'
-  use 'hrsh7th/nvim-compe'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/nvim-cmp'
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  use 'nvim-treesitter/playground'
 
   -- Finder
   use 'nvim-lua/popup.nvim'
@@ -26,7 +30,6 @@ return require('packer').startup(function()
 
   -- Visual
   use {'dracula/vim', as = 'dracula'}
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
 
 end)
