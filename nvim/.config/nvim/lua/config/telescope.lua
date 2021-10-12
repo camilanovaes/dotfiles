@@ -58,20 +58,19 @@ require('telescope').setup{
 			layout_config = {
 				height = 0.4
 			}
-
 		},
-		grep_string = {
+		treesitter = {
 			theme = "ivy",
-			disable_devicons = true
+			disable_devicons = true,
+			winblend = 10,
+			layout_config = {
+				height = 0.4
+			}
 		},
-		buffers = {
-			theme = "ivy",
-			disable_devicons = true
-		},
-		help_tags = {
-			theme = "ivy",
-			disable_devicons = true
-		}
+		lsp_references = { theme = "ivy", disable_devicons = true, previewer = false },
+		grep_string = { theme = "ivy", disable_devicons = true },
+		buffers = { theme = "ivy", disable_devicons = true },
+		help_tags = { theme = "ivy", disable_devicons = true },
 	}
 }
 

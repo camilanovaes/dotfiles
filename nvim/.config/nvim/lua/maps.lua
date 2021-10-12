@@ -55,7 +55,9 @@ remap('n', '<leader>gl', ':GV<CR>', opts)
 -- telescope
 remap('n', '<C-p>', "<cmd>lua require('telescope.builtin').find_files()<cr>", opts)
 remap('n', '<C-f>', "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
-remap('n', '<leader>f>', "<cmd>lua require('telescope.builtin').grep_string()<cr>", opts)
+remap('n', '<C-s>', "<cmd>lua require('telescope.builtin').grep_string()<cr>", opts)
+remap('n', '<C-g>', "<cmd>lua require('telescope.builtin').lsp_references()<cr>", opts)
+remap('n', '<C-l>', "<cmd>lua require('telescope.builtin').treesitter()<cr>", opts)
 remap('n', '<leader>fb', "<cmd>lua require('telescope.builtin').buffers()<cr>", opts)
 remap('n', '<leader>fh', "<cmd>lua require('telescope.builtin').help_tags()<cr>", opts)
 
