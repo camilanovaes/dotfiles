@@ -27,6 +27,7 @@ return require('packer').startup(function()
   -- Git
   use 'tpope/vim-fugitive'
   use 'junegunn/gv.vim'
+  use 'lewis6991/gitsigns.nvim'
 
   -- Visual
   use {'dracula/vim', as = 'dracula'}
