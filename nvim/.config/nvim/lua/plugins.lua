@@ -31,6 +31,7 @@ return require('packer').startup(function()
 
   -- Visual
   use {'dracula/vim', as = 'dracula'}
-  use "lukas-reineke/indent-blankline.nvim"
+  use 'lukas-reineke/indent-blankline.nvim'
+  use 'nvim-lualine/lualine.nvim'
 
 end)
