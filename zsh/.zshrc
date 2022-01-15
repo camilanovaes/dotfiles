@@ -8,18 +8,13 @@
 # Author: Camila Novaes <novaes.csw@gmail.com>
 #
 # Path to oh-my-zsh installation.
-export ZSH="/home/camila/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # ZSH Theme
 ZSH_THEME="bira"
 
 # Plugins
-plugins=(git
-	 zsh-syntax-highlighting
-	 zsh-autosuggestions
-	 docker
-	 fzf
-	 z)
+plugins=(git zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 export LC_CTYPE=en_US.UTF-8
@@ -30,13 +25,9 @@ export DISABLE_AUTO_TITLE='true'
 # VirtualEnvWrapper configuration
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.8
-source /home/camila/.local/bin/virtualenvwrapper.sh
-
-# NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3.8
+export VIRTUALENVWRAPPER_SCRIPT=/home/camila/.local/bin/virtualenvwrapper.sh
+source /home/camila/.local/bin/virtualenvwrapper_lazy.sh
 
 # Path
 path+=('/home/camila/.local/bin')
