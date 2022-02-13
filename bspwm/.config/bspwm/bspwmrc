@@ -1,0 +1,36 @@
+#! /bin/sh
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+# Monitor
+${HOME}/.screenlayout/default.sh
+bspc monitor HDMI-A-0 -d 8 9 0
+bspc monitor HDMI-A-1 -d 1 2 3 4 5 6 7
+
+# Appearance
+bspc config border_width        2
+bspc config window_gap          12
+bspc config split_ratio         0.52
+bspc config borderless_monocle  true
+bspc config gapless_monocle     true
+
+# App Rules
+# To find the application name, use:
+# 'xprop | grep WM_CLASS' and click on the window
+bspc rule -a Firefox desktop='1'
+bspc rule -a Brave-browser desktop='1'
+bspc rule -a rocket.chat desktop='0'
+bspc rule -a obsidian desktop='4'
+bspc rule -a Zotero desktop='5'
+bspc rule -a thunderbird desktop='7'
+bspc rule -a Thunar state=floating
+bspc rule -a rdesktop state=floating
+bspc rule -a Vivado state=floating
+
+# Autostart
+picom &
+feh --bg-fill ~/Pictures/Wallpapers/lake.jpg
+bash ~/.config/polybar/launch.sh &
+nm-applet --indicator &
+blueman-applet &
+
