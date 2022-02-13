@@ -53,3 +53,10 @@ alias t="tmux"
 alias tls="tmux ls"
 alias ta="tmux attach"
 
+## Vivado
+source /opt/Xilinx/Vivado/2016.4/settings64.sh
+#export XILINXD_LICENSE_FILE=2506@ip-server:/home/camila/.roe/Xilinx.lic
+export _JAVA_AWT_WM_NONREPARENTING=1 # To open vivado with WM
+export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dsun.java2d.xrender=true"
+
+
