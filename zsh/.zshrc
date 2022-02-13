@@ -48,16 +48,8 @@ alias gl="git l"
 alias gp="git pull"
 alias gf="git fetch"
 
-## Clip
-alias ccc="xclip -sel clip"
-
-## Dotfile repository
-alias config='/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME'
-
 ## Tmux
 alias t="tmux"
 alias tls="tmux ls"
 alias ta="tmux attach"
 
-## Folders
-alias w="cd ~/Development/sync/ptp_analyzer"
