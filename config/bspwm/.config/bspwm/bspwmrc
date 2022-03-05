@@ -29,7 +29,7 @@ bspc rule -a Vivado state=floating
 
 # Autostart
 picom &
-feh --bg-fill ~/Pictures/Wallpapers/lake.jpg
+feh --bg-fill ~/Dotfiles/wallpapers/lake.jpg
 bash ~/.config/polybar/launch.sh &
 nm-applet --indicator &
 blueman-applet &
