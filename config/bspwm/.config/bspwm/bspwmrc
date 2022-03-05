@@ -33,4 +33,5 @@ feh --bg-fill ~/Pictures/Wallpapers/lake.jpg
 bash ~/.config/polybar/launch.sh &
 nm-applet --indicator &
 blueman-applet &
+copyq &
 
