@@ -14,6 +14,7 @@ arandr
 neofetch
 git
 vim
+neovim
 zsh
 thunar
 thunderbird
@@ -49,3 +50,4 @@ ripgrep
 textlive-full
 fontconfig
 curl
+apt-transport-https
