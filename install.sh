@@ -16,6 +16,9 @@ source "$(pwd)/scripts/setup.sh"
 echo -e "\e[1;33m   --- Starting installation process!  \e[0m"
 
 # Execute
+## Verify OS
+verify_os
+
 ## Change source list
 change_source_list $SOURCE_LIST_PATH
 
