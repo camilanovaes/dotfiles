@@ -8,7 +8,7 @@ require('lualine').setup({
   options = {
     -- theme = "vscode",
     -- theme = "nord",
-    theme = "dracula",
+    theme = "dracula-nvim",
     component_separators = {'', ''},
     section_separators = {'', ''},
   },

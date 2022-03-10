@@ -3,7 +3,7 @@
 ;==========================================================
 
 [colors]
-background = #00
+background = #000000
 background-alt = #444
 foreground = #dfdfdf
 foreground-alt = #555
