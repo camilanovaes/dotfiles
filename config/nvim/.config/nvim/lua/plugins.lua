@@ -30,7 +30,7 @@ return require('packer').startup(function()
   use 'lewis6991/gitsigns.nvim'
 
   -- Visual
-  use {'dracula/vim', as = 'dracula'}
+  use 'Mofiqul/dracula.nvim'
   use 'lukas-reineke/indent-blankline.nvim'
   use 'nvim-lualine/lualine.nvim'
 
