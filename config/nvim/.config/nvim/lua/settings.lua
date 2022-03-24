@@ -39,7 +39,7 @@ bo.softtabstop = 4
 bo.shiftwidth  = 4
 bo.expandtab   = false
 bo.smartindent = true
-bo.textwidth   = 80
+bo.textwidth   = 79
 bo.swapfile    = false
 bo.undofile    = true
 
