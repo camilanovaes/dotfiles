@@ -51,3 +51,4 @@ textlive-full
 fontconfig
 curl
 apt-transport-https
+software-properties-common
