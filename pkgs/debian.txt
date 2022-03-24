@@ -17,6 +17,7 @@ vim
 neovim
 zsh
 thunar
+thunar-archive-plugin
 thunderbird
 tmux
 lxpolkit
