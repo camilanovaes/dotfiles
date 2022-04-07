@@ -34,10 +34,10 @@ wo.conceallevel   = 0
 
 -- buffer-local options
 bo.swapfile    = false
-bo.tabstop     = 4
-bo.softtabstop = 4
-bo.shiftwidth  = 4
-bo.expandtab   = false
+bo.tabstop     = 2
+bo.softtabstop = 2
+bo.shiftwidth  = 2
+bo.expandtab   = true
 bo.smartindent = true
 bo.textwidth   = 79
 bo.swapfile    = false
