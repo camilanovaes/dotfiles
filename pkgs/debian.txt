@@ -1,6 +1,7 @@
 bspwm
 sxhkd
 xorg
+firmware-amd-graphics
 sddm
 rofi
 unzip
