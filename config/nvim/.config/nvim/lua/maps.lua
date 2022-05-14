@@ -45,7 +45,7 @@ remap('i', '<expr> <C-',  "compe#scroll({ 'delta': -4 })", opts)
 -- git
 remap('n', '<leader>gb', ':Git blame<CR>', opts)
 remap('n', '<leader>gs', ':vertical Git<CR>', opts)
-remap('n', '<leader>gp', ':Git push<Space>', opts)
+remap('n', '<leader>gp', ':Git -c push.default=current push<CR>', opts)
 remap('n', '<leader>gi', ':Git diff<CR>', opts)
 remap('n', '<leader>gw', ':Gwrite<CR>', opts)
 remap('n', '<leader>gk', ':Gclog<CR>', opts)
