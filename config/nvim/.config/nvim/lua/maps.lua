@@ -48,8 +48,6 @@ remap('n', '<leader>gs', ':vertical Git<CR>', opts)
 remap('n', '<leader>gp', ':Git -c push.default=current push<CR>', opts)
 remap('n', '<leader>gi', ':Git diff<CR>', opts)
 remap('n', '<leader>gw', ':Gwrite<CR>', opts)
-remap('n', '<leader>gk', ':Gclog<CR>', opts)
-remap('n', '<leader>gc', ':Git checkout<Space>', opts)
 remap('n', '<leader>gl', ':GV<CR>', opts)
 
 -- telescope
@@ -58,6 +56,12 @@ remap('n', '<C-f>', "<cmd>lua require('telescope.builtin').live_grep()<cr>", opt
 remap('n', '<C-s>', "<cmd>lua require('telescope.builtin').grep_string()<cr>", opts)
 remap('n', '<C-g>', "<cmd>lua require('telescope.builtin').lsp_references()<cr>", opts)
 remap('n', '<C-l>', "<cmd>lua require('telescope.builtin').treesitter()<cr>", opts)
-remap('n', '<leader>fb', "<cmd>lua require('telescope.builtin').buffers()<cr>", opts)
-remap('n', '<leader>fh', "<cmd>lua require('telescope.builtin').help_tags()<cr>", opts)
+remap('n', '<leader>tb', "<cmd>lua require('telescope.builtin').buffers()<cr>", opts)
+remap('n', '<leader>th', "<cmd>lua require('telescope.builtin').help_tags()<cr>", opts)
+remap('n', '<leader>gc', "<cmd>lua require('telescope.builtin').git_commits()<cr>", opts)
+remap('n', '<leader>tp', ":Telescope projects<cr>", opts)
+
+-- toggle term
+remap('n', "<C-t>", ":ToggleTerm<cr>", opts)
+remap('i', "<C-t>", ":ToggleTerm<cr>", opts)
 
