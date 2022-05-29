@@ -112,6 +112,9 @@ config_zsh() {
 	## FZF
 	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 	~/.fzf/install --no-zsh --no-bash --completion --key-bindings
+
+  # Set ZSH as the default shell
+  chsh -s $(which zsh)
 }
 
 # Configure AMD
@@ -135,6 +138,11 @@ __check_software_dir() {
 	[ ! -d "$SOFTWARE_DIR" ] && {
 		mkdir -p "$SOFTWARE_DIR"
 	}
+}
+
+__install_neovim(){
+  sudo dpkg -i --force-overwrite $1
+  sudo apt -f install
 }
 
 # Download ans setup appimage app
