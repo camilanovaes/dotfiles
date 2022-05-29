@@ -36,4 +36,6 @@ sudo make altinstall
 python3.8 --version
 
 # Delete the files
+rm Python-${PYTHON_VERSION}.tar.xz
+sudo rm -frd Python-${PYTHON_VERSION}
 
