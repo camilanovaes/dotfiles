@@ -17,12 +17,14 @@ bspc config gapless_monocle     true
 # App Rules
 # To find the application name, use:
 # 'xprop | grep WM_CLASS' and click on the window
+bspc rule -a obsidian desktop='0'
 bspc rule -a Firefox desktop='1'
 bspc rule -a Brave-browser desktop='1'
-bspc rule -a rocket.chat desktop='9'
-bspc rule -a obsidian desktop='0'
+bspc rule -a code desktop='2'
 bspc rule -a Zotero desktop='5'
+bspc rule -a rocket.chat desktop='9'
 bspc rule -a thunderbird desktop='7'
+bspc rule -a "microsoft teams - preview" desktop='8'
 bspc rule -a Thunar state=floating
 bspc rule -a rdesktop state=floating
 bspc rule -a Vivado state=floating
