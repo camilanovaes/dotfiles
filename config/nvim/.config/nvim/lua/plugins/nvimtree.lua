@@ -1,21 +1,19 @@
 -- nvim-tree
-vim.g.nvim_tree_respect_buf_cwd = 1
+-- disable netrw
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- set termguicolors to enable highlight groups
+vim.opt.termguicolors = true
 
 require'nvim-tree'.setup {
   auto_reload_on_write = true,
-  disable_netrw = false,
-  hijack_cursor = false,
-  hijack_netrw = true,
-  hijack_unnamed_buffer_when_opening = false,
   ignore_buffer_on_setup = false,
-  open_on_setup = false,
-  open_on_setup_file = false,
   open_on_tab = false,
   sort_by = "name",
   update_cwd = true,
   view = {
-    width = 30,
-    height = 30,
+    adaptive_size = true,
     hide_root_folder = false,
     side = "left",
     preserve_window_proportions = false,

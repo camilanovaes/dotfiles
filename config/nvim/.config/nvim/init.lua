@@ -1,20 +1,10 @@
 -- init.lua
 
-require('settings')
-require('maps')
-require('plugins')
-require('config/nvimtree')
-require('config/statusline')
-require('config/visual')
-require('config/lsp')
-require('config/treesitter')
-require('config/cmp')
-require('config/telescope')
-require('config/gitsigns')
-require('config/lualine')
-require('config/hdl')
-require('config/autopairs')
-require('config/toggleterm')
-require('config/project')
-require('config/indent')
-require('config/clangd')
+-- Set the leader key.
+-- It must be set before the other configuration are loaded to make sure the
+-- correct leader key are used in all files.
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
+require("config")
+require("plugins")
