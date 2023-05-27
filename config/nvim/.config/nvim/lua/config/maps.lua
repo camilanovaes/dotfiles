@@ -56,6 +56,18 @@ remap('n', 'gd', vim.lsp.buf.definition, lsp_opts)
 remap('n', 'gi', vim.lsp.buf.implementation, lsp_opts)
 remap('n', 'gr', vim.lsp.buf.references, lsp_opts)
 
+-- debug
+remap('n', '<F5>', ":lua require('dap').continue()<cr>", lsp_opts)
+remap('n', '<F10>', ":lua require('dap').step_into()<cr>", lsp_opts)
+remap('n', '<F11>', ":lua require('dap').step_over()<cr>", lsp_opts)
+remap('n', '<F12>', ":lua require('dap').step_out()<cr>", lsp_opts)
+remap('n', '<leader>b', ":lua require('dap').toggle_breakpoint()<cr>", lsp_opts)
+remap('n', '<leader>B', ":lua require('dap').set_breakpoint(vim.fn.input('Breakpoing condition: '))<cr>", lsp_opts)
+remap('n', '<leader>lp', ":lua require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<cr>", lsp_opts)
+remap('n', '<leader>dr', ":lua require('dap').repl.open()<cr>", lsp_opts)
+remap('n', '<F6>', ":lua require('dapui').open()<cr>", lsp_opts)
+remap('n', '<F7>', ":lua require('dapui').close()<cr>", lsp_opts)
+
 -- trouble
 remap("n", "<leader>xx", "<cmd>TroubleToggle<cr>", opts)
 remap("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>", opts)
