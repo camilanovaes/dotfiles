@@ -80,7 +80,18 @@ require('lazy').setup({
   { "catppuccin/nvim", name = "catppuccin" },
   'Mofiqul/dracula.nvim',
   'lukas-reineke/indent-blankline.nvim',
-  'nvim-lualine/lualine.nvim'
+  'nvim-lualine/lualine.nvim',
+
+  {
+    -- Debuging
+    'mfussenegger/nvim-dap',
+    dependencies = {
+      'mfussenegger/nvim-dap-python',
+      'rcarriga/nvim-dap-ui',
+      'theHamsta/nvim-dap-virtual-text',
+      'nvim-telescope/telescope-dap.nvim',
+    },
+  },
 }, {})
 -- return require('packer').startup(function() -- Packer can manage itself
 --   use 'wbthomason/packer.nvim'
