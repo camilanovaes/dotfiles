@@ -1,12 +1,6 @@
 # ZSH CONFIG FILE
-#                       _ _            _       _
-#    ___ __ _ _ __ ___ (_) | __ _   __| | ___ | |
-#   / __/ _` | '_ ` _ \| | |/ _` | / _` |/ _ \| __|
-#  | (_| (_| | | | | | | | | (_| || (_| | (_) | |_
-#   \___\__,_|_| |_| |_|_|_|\__,_(_)__,_|\___/ \__|
-#
 # Author: Camila Novaes <novaes.csw@gmail.com>
-#
+
 # Path to oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -25,11 +19,11 @@ export DISABLE_AUTO_TITLE='true'
 # VirtualEnvWrapper configuration
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3.8
-export VIRTUALENVWRAPPER_SCRIPT=/home/camila/.local/bin/virtualenvwrapper.sh
-source /home/camila/.local/bin/virtualenvwrapper_lazy.sh
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.11
+export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
+source /usr/local/bin/virtualenvwrapper_lazy.sh
 
-# Path
+# Add local bin to path
 path+=('/home/camila/.local/bin')
 export PATH
 
@@ -37,26 +31,14 @@ export PATH
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Alias
-## Editor
-alias n="nvim"
-
 ## Git
 alias gs="git status"
 alias ga="git add"
 alias gc="git commit -v"
 alias gl="git l"
 alias gp="git pull"
-alias gf="git fetch"
+alias gf="git fetch -a"
 
-## Tmux
-alias t="tmux"
-alias tls="tmux ls"
-alias ta="tmux attach"
-
-## Vivado
-source /opt/Xilinx/Vivado/2016.4/settings64.sh
-export XILINXD_LICENSE_FILE=2506@200.239.93.2:/home/camila/.roe/Xilinx.lic
-export _JAVA_AWT_WM_NONREPARENTING=1 # To open vivado with WM
-export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dsun.java2d.xrender=true"
-
-
+# Keybinds
+bindkey -s "^f" "tmux-session\n"
+bindkey -s "^g" "tmux-switcher\n"
