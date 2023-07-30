@@ -30,7 +30,7 @@ require('lazy').setup({
     'neovim/nvim-lspconfig',
     dependencies = {
       -- Automatically install LSPs to stdpath for neovim
-      { 'williamboman/mason.nvim', config = true, build = ":MasonUpdate"},
+      { 'williamboman/mason.nvim', config = true, build = ":MasonUpdate" },
       'williamboman/mason-lspconfig.nvim',
 
       -- Useful status updates for LSP
@@ -38,9 +38,16 @@ require('lazy').setup({
       { 'j-hui/fidget.nvim', opts = {} },
 
       -- Additional lua configuration, makes nvim stuff amazing!
-      { 'folke/neodev.nvim', opts = {} },
+      {
+        'folke/neodev.nvim',
+        opts = {}
+      },
     },
   },
+
+  -- Inject additional stuff into LSP diagnostics/actions
+  'jose-elias-alvarez/null-ls.nvim',
+
   {
     -- Highlight, edit and navigate code
     'nvim-treesitter/nvim-treesitter',
@@ -82,6 +89,16 @@ require('lazy').setup({
   'lukas-reineke/indent-blankline.nvim',
   'nvim-lualine/lualine.nvim',
 
+  -- Tests
+  {
+    "nvim-neotest/neotest",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "antoinemadec/FixCursorHold.nvim",
+      "nvim-neotest/neotest-python",
+    }
+  },
   {
     -- Debuging
     'mfussenegger/nvim-dap',

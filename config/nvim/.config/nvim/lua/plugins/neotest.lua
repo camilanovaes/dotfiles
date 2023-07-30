@@ -9,7 +9,6 @@ require("neotest").setup({
         -- Runner to use. Will use pytest if available by default.
         -- Can be a function to return dynamic value.
         runner = "pytest",
-
     })
   }
 })

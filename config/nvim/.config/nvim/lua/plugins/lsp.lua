@@ -6,13 +6,10 @@ local lspconfig = require("lspconfig")
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
-lspconfig.pyright.setup{
-  on_attach = function()
-    -- Add keymap when attach with pyright (only inside the current buffer)
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, {buffer=0})
-  end,
-  capabilities = capabilities,
-}
+set_lsp_keymap = function()
+  -- Add keymap when attach with pyright (only inside the current buffer)
+  vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = 0 })
+end
 
 lspconfig.lua_ls.setup({
   capabilities = capabilities,
@@ -23,3 +20,27 @@ lspconfig.lua_ls.setup({
     },
   }
 })
+
+lspconfig.pyright.setup {
+  on_attach = set_lsp_keymap,
+  capabilities = capabilities,
+}
+
+lspconfig.clangd.setup {
+  capabilities = capabilities,
+}
+
+lspconfig.tsserver.setup {
+  on_attach = set_lsp_keymap,
+  capabilities = capabilities,
+}
+
+lspconfig.ocamllsp.setup {
+  on_attach = set_lsp_keymap,
+  capabilities = capabilities,
+}
+
+lspconfig.cssls.setup {
+  on_attach = set_lsp_keymap,
+  capabilities = capabilities,
+}
