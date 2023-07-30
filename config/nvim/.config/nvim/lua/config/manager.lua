@@ -114,4 +114,6 @@ require('lazy').setup({
       'nvim-telescope/telescope-dap.nvim',
     },
   },
+  -- Copilot (testing)
+  'github/copilot.vim',
 }, {})
