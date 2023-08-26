@@ -20,6 +20,14 @@ require('lazy').setup({
   'tpope/vim-sleuth',
   'windwp/nvim-autopairs',
 
+  -- Navegation
+  {
+    'nvim-tree/nvim-tree.lua',
+    dependencies = {
+      'kyazdani42/nvim-web-devicons',
+    },
+  },
+
   -- Git
   'tpope/vim-fugitive',
   'junegunn/gv.vim',

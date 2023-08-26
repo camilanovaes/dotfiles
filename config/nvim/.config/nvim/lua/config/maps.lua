@@ -17,7 +17,7 @@ remap('n', '<C-h>', '<C-w>h', opts)
 remap('n', '<C-l>', '<C-w>l', opts)
 
 -- open navigation tree
-remap('n', '<C-n>', ':Vex<CR>', opts)
+remap('n', '<C-n>', ':NvimTreeToggle<CR>', opts)
 
 -- adjust split size easily
 remap('n', '<C-Left>', ':vertical resize +3<CR>', opts)
