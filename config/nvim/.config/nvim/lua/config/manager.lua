@@ -59,7 +59,7 @@ require('lazy').setup({
   },
 
   -- Inject additional stuff into LSP diagnostics/actions
-  'jose-elias-alvarez/null-ls.nvim',
+  'nvimtools/none-ls.nvim',
 
   {
     -- Highlight, edit and navigate code
