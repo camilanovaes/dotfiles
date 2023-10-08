@@ -93,13 +93,13 @@ require('lazy').setup({
       'nvim-lua/plenary.nvim',
       'nvim-lua/popup.nvim',
       'nvim-telescope/telescope-project.nvim',
-    },
+    }
   },
 
   -- Visual
   { "catppuccin/nvim", name = "catppuccin" },
   'Mofiqul/dracula.nvim',
-  'lukas-reineke/indent-blankline.nvim',
+    { 'lukas-reineke/indent-blankline.nvim', main="ibl", opts={} },
   'nvim-lualine/lualine.nvim',
 
   -- Tests
