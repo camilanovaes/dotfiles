@@ -32,6 +32,15 @@ require('lazy').setup({
   'tpope/vim-fugitive',
   'junegunn/gv.vim',
   'lewis6991/gitsigns.nvim',
+  'sindrets/diffview.nvim',
+  {
+    'rbong/vim-flog',
+    lazy = true,
+    cmd = { "Flog", "Flogsplit", "Floggit" },
+    dependencies = {
+      'tpope/vim-fugitive',
+    },
+  },
 
   {
     -- LSP
@@ -97,9 +106,9 @@ require('lazy').setup({
   },
 
   -- Visual
-  { "catppuccin/nvim", name = "catppuccin" },
+  { "catppuccin/nvim",                     name = "catppuccin" },
   'Mofiqul/dracula.nvim',
-    { 'lukas-reineke/indent-blankline.nvim', main="ibl", opts={} },
+  { 'lukas-reineke/indent-blankline.nvim', main = "ibl",       opts = {} },
   'nvim-lualine/lualine.nvim',
 
   -- Tests

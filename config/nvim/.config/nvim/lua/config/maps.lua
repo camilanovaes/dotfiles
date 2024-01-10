@@ -43,7 +43,7 @@ remap('n', '<leader>gs', ':vertical Git<CR>', opts)
 remap('n', '<leader>gp', ':Git -c push.default=current push<CR>', opts)
 remap('n', '<leader>gi', ':Git diff<CR>', opts)
 remap('n', '<leader>gw', ':Gwrite<CR>', opts)
-remap('n', '<leader>gl', ':GV<CR>', opts)
+remap('n', '<leader>gl', ':Flog<CR>', opts)
 
 -- telescope
 remap('n', '<C-p>', require('telescope.builtin').find_files, opts)
