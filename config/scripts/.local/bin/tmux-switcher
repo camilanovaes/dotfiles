@@ -1,0 +1,4 @@
+#!/bin/bash
+
+session_name=$(tmux list-sessions | awk '{print $1}' | sed 's/://g' | fzf)
+tmux switch-client -t "$session_name"
