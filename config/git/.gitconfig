@@ -8,3 +8,6 @@
 	stash-all = stash save --include-untracked§
 	uncommit = reset --soft HEAD^
 	unstage = reset HEAD
+[commit]
+	template = /home/camila/.git-commit-message.txt
+	verbose = true
