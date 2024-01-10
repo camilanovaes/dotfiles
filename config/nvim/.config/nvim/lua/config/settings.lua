@@ -40,6 +40,9 @@ vim.opt.conceallevel   = 0
 vim.opt.textwidth      = 79
 vim.opt.swapfile       = false
 
+-- spell checking
+vim.opt.spelllang      = "en_us"
+vim.opt.spell          = true
 
 -- Configure diagnostics messages
 vim.diagnostic.config({
