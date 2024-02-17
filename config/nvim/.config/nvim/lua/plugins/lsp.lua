@@ -6,7 +6,7 @@ local lspconfig = require("lspconfig")
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
-set_lsp_keymap = function()
+local set_lsp_keymap = function()
   -- Add keymap when attach with pyright (only inside the current buffer)
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = 0 })
 end
