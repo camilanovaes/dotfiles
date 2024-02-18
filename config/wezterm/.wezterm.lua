@@ -20,5 +20,8 @@ config.hide_tab_bar_if_only_one_tab = true
 -- We can also disable the tab bar entirely using:
 -- config.enable_tab_bar = false
 
+-- Font
+config.font_size = 11
+
 -- and finally, return the configuration to wezterm
 return config
