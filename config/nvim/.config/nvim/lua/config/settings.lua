@@ -33,7 +33,7 @@ vim.o.timeoutlen       = 300
 vim.wo.number         = true  -- Make line numbers
 vim.opt.relativenumber = true  -- Use relative numbers
 vim.opt.cursorline     = true
-vim.opt.colorcolumn    = "80"
+vim.opt.colorcolumn    = {"80", "120"}
 vim.opt.conceallevel   = 0
 
 -- buffer-local options
