@@ -56,11 +56,16 @@ remap('n', '<leader>th', require('telescope.builtin').help_tags, opts)
 remap('n', '<leader>gc', require('telescope.builtin').git_commits, opts)
 remap('n', '<leader>tp', require('telescope').extensions.project.project, opts)
 
+-- diagnostics
+remap('n', '<leader>dd', vim.diagnostic.open_float, opts)
+remap('n', '<leader>[d', vim.diagnostic.goto_next, opts)
+remap('n', '<leader>]d', vim.diagnostic.goto_prev, opts)
+remap('n', '<leader>q', vim.diagnostic.setloclist, opts)
+
 -- lsp
 lsp_opts = { buffer = bufnr }
--- remap('n', '<leader>i', vim.lsp.buf.format, lsp_opts)
+remap('n', '<leader>i', vim.lsp.buf.format, lsp_opts)
 remap('n', '<leader>h', vim.lsp.buf.hover, lsp_opts)
-remap('n', '<leader>dd', vim.diagnostic.open_float, lsp_opts)
 remap('n', 'gD', vim.lsp.buf.declaration, lsp_opts)
 remap('n', 'gd', vim.lsp.buf.definition, lsp_opts)
 remap('n', 'gi', vim.lsp.buf.implementation, lsp_opts)
@@ -99,7 +104,3 @@ remap('n', '<leader>ts', "<cmd>lua require('neotest').summary.toggle() <cr>", op
 -- scripts
 remap('n', '<C-f>', ":!tmux neww tmux-session <cr>", opts)
 remap('n', '<C-g>', ":!tmux neww tmux-switcher <cr>", opts)
-
--- TEMP: python formating
-remap('n', '<leader>i', ":!python3 -m yapf -i % <cr>", opts)
-remap('n', '<leader>o', ":!python3 -m isort % <cr>", opts)

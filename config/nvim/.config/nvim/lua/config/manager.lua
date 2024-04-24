@@ -89,7 +89,11 @@ require('lazy').setup({
       'hrsh7th/nvim-cmp',
 
       -- Snippets
-      'L3MON4D3/LuaSnip',
+      {
+        'L3MON4D3/LuaSnip',
+        version = "v2.*",
+        build = "make install_jsregexp"
+      },
       'saadparwaiz1/cmp_luasnip',
       'rafamadriz/friendly-snippets'
     },
@@ -127,6 +131,7 @@ require('lazy').setup({
     dependencies = {
       'mfussenegger/nvim-dap-python',
       'rcarriga/nvim-dap-ui',
+      'nvim-neotest/nvim-nio',
       'theHamsta/nvim-dap-virtual-text',
       'nvim-telescope/telescope-dap.nvim',
     },
