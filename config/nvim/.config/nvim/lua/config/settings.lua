@@ -53,22 +53,21 @@ vim.diagnostic.config({
   severity_sort = false,
 })
 
+-- Autocmds configuration:
+-- Autocmd is a way to execute commands automatically based on neovim events
+--
 -- Remove all trailing whitespace on save
-local TrimWhiteSpaceGrp = vim.api.nvim_create_augroup("TrimWhiteSpaceGrp", { clear = true })
 vim.api.nvim_create_autocmd("BufWritePre", {
-    command = [[:%s/\s\+$//e]],
-    group = TrimWhiteSpaceGrp,
+    desc = "Remove trailing whitespace on save",
+    group = vim.api.nvim_create_augroup("TrimWhiteSpaceGrp", { clear = true }),
+    command = [[:%s/\s\+$//e]]
 })
 
--- Enable spell checking for certain file types
-vim.api.nvim_create_autocmd(
-    { "BufRead", "BufNewFile" },
-    -- { pattern = { "*.txt", "*.md", "*.tex" }, command = [[setlocal spell<cr> setlocal spelllang=en,de<cr>]] }
-    {
-        pattern = { "*.txt", "*.md", "*.tex" },
-        callback = function()
-            vim.opt.spell = true
-            vim.opt.spelllang = "en"
-        end,
-    }
-)
+-- Highlight yanked text
+vim.api.nvim_create_autocmd("TextYankPost", {
+    desc = "Highlight yanked text",
+    group = vim.api.nvim_create_augroup("HighlightYankGrp", { clear = true }),
+    callback = function()
+        vim.highlight.on_yank()
+    end
+})
