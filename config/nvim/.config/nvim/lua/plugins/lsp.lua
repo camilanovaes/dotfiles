@@ -49,3 +49,18 @@ lspconfig.emmet_language_server.setup {
   on_attach = set_lsp_keymap,
   capabilities = capabilities,
 }
+
+lspconfig.jsonls.setup {
+  on_attach = set_lsp_keymap,
+  capabilities = capabilities,
+}
+
+lspconfig.terraformls.setup {
+  on_attach = set_lsp_keymap,
+  capabilities = capabilities,
+}
+
+lspconfig.rust_analyzer.setup {
+  on_attach = set_lsp_keymap,
+  capabilities = capabilities,
+}

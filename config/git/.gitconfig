@@ -11,3 +11,5 @@
 [commit]
 	template = /home/camila/.git-commit-message.txt
 	verbose = true
+[init]
+	defaultBranch = main

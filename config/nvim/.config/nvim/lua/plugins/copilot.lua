@@ -5,3 +5,4 @@ let g:copilot_filetypes = {
     \ 'yaml': v:true
     \ }
 ]])
+vim.cmd(":Copilot disable")
