@@ -20,8 +20,8 @@ export DISABLE_AUTO_TITLE='true'
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-export VIRTUALENVWRAPPER_SCRIPT=/home/camila/.local/bin/virtualenvwrapper.sh
-source /home/camila/.local/bin/virtualenvwrapper_lazy.sh
+export VIRTUALENVWRAPPER_SCRIPT=$HOME/.local/bin/virtualenvwrapper.sh
+source $HOME/.local/bin/virtualenvwrapper_lazy.sh
 
 # Add local bin to path
 path+=('/home/camila/.local/bin')
