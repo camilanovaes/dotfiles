@@ -3,6 +3,7 @@
 import argparse
 import os
 import subprocess
+import sys
 from shutil import which
 
 
@@ -29,14 +30,13 @@ class Runner:
         if self.dry:
             self._print_cmd(cmd, cwd)
             return
-        return subprocess.run(
-            cmd, check=check, cwd=cwd, capture_output=capture_output
-        )
+        return subprocess.run(cmd, check=check, cwd=cwd, capture_output=capture_output)
 
 
 class Installer:
     def __init__(self, runner):
         self.runner = runner
+        self.summary = []
 
     def _install(self, cmd, packages: str | list):
         if isinstance(packages, list):
@@ -46,35 +46,44 @@ class Installer:
         self.runner.run(cmd, sudo=True)
 
     def _install_apt(self, package: str | list):
-        cmd = ["apt", "install"]
+        cmd = ["apt", "install", "-y"]
         self._install(cmd, package)
 
     def _install_pip(self, package: str | list):
         cmd = ["pip3", "install"]
         self._install(cmd, package)
 
-    def _install_basic_packages(self):
+    def install_basic_packages(self):
         print("# Installing basic packages")
-        packages = [
-            "git",
-            "htop",
-            "python3-pip",
-            "stow",
-            "tmux",
-        ]
-        self._install_apt(packages)
+        pkg_file = "./pkgs/ubuntu.txt"
+        with open(pkg_file, "r") as f:
+            packages = f.read().splitlines()
+        for package in packages:
+            self._install_apt(package)
+        self.summary.append("Installed basic packages")
 
-    def _install_zsh(self):
+    def install_zsh(self):
+        # TODO
         # Install zsh
-        self._install_apt("zsh")
+        # self._install_apt(["zsh", "curl"])
 
         # Install oh-my-zsh
-        cmd = ["curl", "",
-               "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh",]
-        prog = self.runner.run(cmd, capture_output=True)
-        print(dir(prog))
+        # cmd = [
+        #     "curl",
+        #     "",
+        #     "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh",
+        # ]
+        # prog = self.runner.run(cmd, capture_output=True).stdout
+        # self.runner.run(prog, shell=True)
+        pass
 
-    def _install_neovim(self):
+    def _install_fzf(self):
+        # TODO:
+        # git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+        # ~/.fzf/install
+        pass
+
+    def install_neovim(self):
         print("# Installing neovim from source")
         # Install required packages
         req = {"apt": ["gettext", "cmake", "unzip", "curl"], "pip": ["ninja"]}
@@ -96,27 +105,41 @@ class Installer:
         install_cmd = ["make", "install"]
         self.runner.run(install_cmd, cwd=cwd, sudo=True)
 
-    def _run_stow(self):
+        self.summary.append("Installed neovim")
+
+    def run_stow(self):
         print("# Installing dotfiles")
+        self._install_apt("stow")
         home_dir = os.path.expanduser("~")
         current_dir = os.path.dirname(os.path.abspath(__file__))
         cfg_dir = os.path.join(current_dir, "config")
-        configs = ["git", "nvim", "scripts", "tmux", "term", "zsh"]
+        configs = [d for d in os.listdir(cfg_dir)]
         for c in configs:
             cmd = ["stow", "-d", cfg_dir, "-t", home_dir, c]
             self.runner.run(cmd)
+        self.summary.append("Installed dotfiles")
+
+    def print_summary(self):
+        print("# Summary")
+        for s in self.summary:
+            print(f" - {s}")
 
     def install(self):
-        self._install_basic_packages()
-        # self._install_neovim()
-        # self._install_zsh()
-        self._run_stow()
+        self.install_basic_packages()
+        self.install_neovim()
+        self.install_zsh()
+        self.run_stow()
 
 
 def get_parser():
     parser = argparse.ArgumentParser(description="Install my dotfiles")
     parser.add_argument(
         "--dry", action="store_true", help="Whether to run in dry mode."
+    )
+    parser.add_argument(
+        "opt",
+        choices=["all", "pkg", "neovim", "zsh", "stow"],
+        help="Whether to run all or specific options.",
     )
     return parser.parse_args()
 
@@ -128,7 +151,18 @@ def main():
     args = get_parser()
     runner = Runner(args.dry)
     installer = Installer(runner)
-    installer.install()
+    if args.opt == "all":
+        installer.install()
+    elif args.opt == "pkg":
+        installer.install_basic_packages()
+    elif args.opt == "neovim":
+        installer.install_neovim()
+    elif args.opt == "zsh":
+        installer.install_zsh()
+    elif args.opt == "stow":
+        installer.run_stow()
+
+    installer.print_summary()
 
 
 if __name__ == "__main__":

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-session=$(find ~ ~/drive ~/personal ~/personal/projects ~/work ~/work/blockstream ~/src -mindepth 1 -maxdepth 1 -type d | fzf)
+session=$(find ~ ~/drive ~/personal ~/projects ~/work ~/src -mindepth 1 -maxdepth 2 -type d | fzf)
 session_name=$(basename "$session" | tr . _)
 
 if ! tmux has-session -t "$session_name" 2> /dev/null; then

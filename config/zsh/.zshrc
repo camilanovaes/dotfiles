@@ -20,11 +20,15 @@ export DISABLE_AUTO_TITLE='true'
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
-source /usr/local/bin/virtualenvwrapper_lazy.sh
+export VIRTUALENVWRAPPER_SCRIPT=/home/camila/.local/bin/virtualenvwrapper.sh
+source /home/camila/.local/bin/virtualenvwrapper_lazy.sh
 
 # Add local bin to path
 path+=('/home/camila/.local/bin')
+path+=('/usr/local/go/bin')
+path+=('/home/camila/go/bin')
+path+=('/home/camila/.cargo')
+path+=('/home/camila/projects/parallel-compute/ispc-v1.21.0-linux/bin')
 export PATH
 
 # FZF configuration
@@ -38,6 +42,8 @@ alias gc="git commit -v"
 alias gl="git l"
 alias gp="git pull"
 alias gf="git fetch -a"
+alias mibdump.py="mibdump"
+alias docker-gui="docker run -it --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix"
 
 # Keybinds
 bindkey -s "^f" "tmux-session\n"

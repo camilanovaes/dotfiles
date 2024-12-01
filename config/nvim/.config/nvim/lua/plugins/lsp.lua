@@ -27,6 +27,16 @@ lspconfig.pyright.setup {
 }
 
 lspconfig.clangd.setup {
+  on_attach = function(client, bufnr)
+    client.resolved_capabilities.document_formatting = false
+    on_attach(client, bufnr)
+  end,
+  cmd = {
+    "clangd",
+    "--clang-tidy",                -- enable clang-tidy diagnostics
+    "--background-index",          -- index project code in the background and persist index on disk
+    "--completion-style=detailed", -- granularity of code completion suggestions: bundled, detailed
+  },
   capabilities = capabilities,
 }
 

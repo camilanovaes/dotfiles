@@ -15,17 +15,15 @@ After that just run the installation script:
 
 ```bash
 cd ~/dotfiles
-./install.py
+./install.py all
 ```
 
 You can check all commands before installing anything using the `--dry` flag (e.g.
-`./install.py --dry`).
-
-That's it! :)
+`./install.py --dry all`).
 
 # Development
 
-For testing the `install.py` use the docker container:
+For testing the `install.py` script use the docker container:
 ```bash
 ./run-dev.sh
 ```
