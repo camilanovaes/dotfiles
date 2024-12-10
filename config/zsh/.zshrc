@@ -48,3 +48,4 @@ alias docker-gui="docker run -it --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp
 # Keybinds
 bindkey -s "^f" "tmux-session\n"
 bindkey -s "^g" "tmux-switcher\n"
+bindkey -s "^b" "git-branch-switcher\n"

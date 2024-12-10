@@ -1,0 +1,4 @@
+#!/bin/bash
+
+branch=$(git branch --sort=-committerdate --no-merged | fzf)
+git checkout $branch
