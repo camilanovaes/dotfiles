@@ -3,3 +3,4 @@ stow
 htop
 python3-pip
 tmux
+xclip
